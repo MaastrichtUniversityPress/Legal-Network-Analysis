@@ -1,91 +1,75 @@
-````{margin}
 
-```{attributiongrey} Attribution
-:class: attribution
-This page reuses CC BY 4.0 licensed content from {cite:t}`template`. {fa}`quote-left`{ref}`Find out more here.<external_resources>`
-```
+# INTRODUCTION TO LEGAL NETWORK ANALYSIS
 
-```{admonition} User types
-:class: tip
-This page is useful for user type 3, 4 and 5.
-```
+Version 0.1 (November 2023)
 
-{bdg-light}`GitHub template`
-{bdg-link-secondary}`Uses TeachBooks package <../../features/teachbooks_intro.html>`
-{bdg-link-primary-line}`Includes TeachBooks Favourites <../../features/favourites.html>`
-{bdg-link-light}`Uses Deploy Book workflow <../deploy-book-workflow/README.html>`
+## AUTHORS
+- Gustavo Arosemena
+- Gijs van Dijck
+- Roland Moerland
 
-```` 
+## LICENSE
 
-# TeachBook Template
+This textbook is released under a CC BY license. This license lets you distribute, remix, adapt, and build upon our work, even commercially, as long as you credit us for the original creation. 
 
-The template allows you to start your own TeachBook and hosting that TeachBook online without knowledge on Git, the Jupyter book package, python or anaconda. It doesn't elaborate on the collaborative functionalities of Git or how to edit the book.
+![license](images/cclicense.png)
 
-## How to get started
+**Work in progress, do not cite or share**
 
-How to use the template is demonstrated in the figure below, all steps are elaborated on in the following step-by-step tutorial.
+Welcome to this introduction in Legal Network Analysis. The aim of this introduction is to provide you with a theoretical and practical understanding of what network analysis is, what it can be used for in the context of legal research, and how it can be applied. 
 
-```{figure} https://github.com/TeachBooks/template_figures/blob/main/teachbooks-template.gif?raw=true
----
-name: template_demo_public
----
-Demonstration for a public repository, video available [here](https://youtu.be/nN3Oi_MVvF0)
-```
+The theory will be discussed and illustrated by means of practical examples and sometimes exercises. We try to accommodate readers with different levels of proficiency in coding:
+- If you have no coding (in Python) experience, you can read the PDF (or the notebook) and simply skip the code that is displayed.
+- If you have experience with running code (e.g. in Jupyter Notebook or VScode), you can execute the code. We have entered the code for you, which means you only have to run the code.
+- If you have experience with Python, you may download the Jupyter Notebook file and alter the code.
 
-1. To get started making your TeachBook with our functionalities, use the [template TeachBook](https://github.com/TeachBooks/main/template) as template:
+The textbook aims to introduce network analysis to legal scholars in a comprehensive and practical way. If you are interested in more background information regarding networks, their analysis and the graph theory underlying it, please feel free to consult the books listed below. We selected publications that are accessible when you are not yet versed in network analysis.
 
-```{figure} https://github.com/TeachBooks/template_figures/blob/main/use_template.png?raw=true
-:name: use-template
-```
+Networks:
+-	Newman, M. (2018). Networks. London: Oxford University Press.
 
-2. Fill in a repository name, this name will be used in the future url of your book:
+(Social) Network analysis:
+-	John, S. (2017). Social Network Analysis. Sage.
+-	Robins, G. (2015). Doing social network research. Routledge.
+-	Scott, J. and Carrington, P.J. (2011). The SAGE handbook of Social Network Analysis. Sage
+-	Tsvetovat, M., & Kouznetsov, A. (2011). Social Network Analysis for Startups: Finding connections on the social web. O'Reilly.
 
-```{figure} https://github.com/TeachBooks/template_figures/blob/main/create_new_repository.png?raw=true
-:name: create_new_repository
-```
+Graph theory:
+-	Wallis, W. D. (2007). A beginner's guide to graph theory. Springer.
+-	Rahman, M. S. (2017). Basic graph theory. Springer. 
+-	Steen, M. R. van. (2010). Graph theory and complex networks: An introduction. Maarten van Steen.
 
-3. You can choose for `Private` only if you've GitHub Pro, GitHub Team, GitHub Enterprise Cloud, or GitHub Enterprise Server. Otherwise, you won't be able to publish your TeachBook online. Furthermore, it prevents people from contributing to your book, making your book essentially 'closed' instead of 'open'. Note that the built book website is always public.
 
-4. You need to activate GitHub pages so that your website is published to the internet. As long as you don't do this your TeachBook is not published online. Actually, now that you've taken this template our workflow tries to publish it to GitHub pages, which you didn't have the chance to activate yet. That's why you probably received an email with 'call-deploy-book: Some jobs were not successful' and you see the failed job under {octicon}`play;1em` `Actions` - `All workflows` -  `call-deploy-book` - {octicon}`x-circle-fill;1em` `Initial commit`. You can activate GitHub pages by setting the source for GitHub pages to GitHub Actions under {octicon}`gear;1em` `Settings` - {octicon}`browser;1em` `Pages` - `Build and deployment` - `Source` - `GitHub Actions`:
+We, the authors, hope you will enjoy our introduction to Legal Network Analysis. We are always open to feedback, suggestions, and help. You can reach us at law-techlab@maastrichtuniversity.nl.
 
-```{figure} https://github.com/TeachBooks/template_figures/blob/main/set_up_pages.png?raw=true
-:name: activate_pages
-```
+The code-part of the textbook is done exclusively in [NetworkX](https://github.com/networkx/networkx). Since this library is  pure python, it is easier to read its source code and that transparency matters for understanding. Faster libraries are available for those who need them, but that remains for the reader to explore.
 
-5. Make an edit to the TeachBook by editing and committing changes to one of the files in the `book/` subdirectory (available under {octicon}`code;1em` `Code`).  Now checkout the progress of the publishing workflow under {octicon}`play;1em``Actions` - `All workflows` -  `call-deploy-book` -`<the most recent workflow run>`. Remember, the first commit which is there has failed because GitHub Pages wasn't activated at the time of `Initial commit`, you could also re-run that job if you don't want to make an edit. You can do so by running the workflow from {octicon}`play;1em``Actions` - `All workflows` -  `call-deploy-book` - {octicon}`x-circle-fill;1em` `Initial commit` - {octicon}`sync;1em` `Re-run all jobs` - `Re-run jobs`:
+For dependencies (besides the usual stuff) make sure you have up to date versions of: 
+* [networkx](https://pypi.org/project/networkx/)
+* [pydot](https://pypi.org/project/pydot/)
+* [text-distance](https://pypi.org/project/textdistance/)
+* [scipy](https://pypi.org/project/scipy/)
 
-```{figure} https://github.com/TeachBooks/template_figures/blob/main/action_re-run.jpeg?raw=true
-:name: action
-```
+## Chapters
+[Welcome](#Welcome)
 
-6. When the workflow has finished, visit your build TeachBook at `https://<username or organiszation_name>.github.io/<repository_name>` (case sensitive). For our example it is [https://dummydocent.github.io/test_book_from_template/](https://dummydocent.github.io/test_book_from_template/) for the shown repository. These links are visible in the action's summary as well, as shown in the figure of step 4.
+[1. Network Analysis: An Introduction](https://github.com/maastrichtlawtech/legalnetworkanalysis_textbook/blob/main/Chapter_1_Introduction.ipynb)
 
-7. Want to get started directly? Your book contains a few exercises to get your started! Visit `https://<username or organiszation_name>.github.io/<repository_name>/exercises/exercises` (case sensitive) to get started with the first ones to get the basics of how to interact with your book on GitHub.
+[2. Network Properties](https://github.com/maastrichtlawtech/legalnetworkanalysis_textbook/blob/main/Chapter_2_Network_Properties.ipynb)
 
-```{figure} https://github.com/TeachBooks/template_figures/blob/main/exercises.png?raw=true
-:name: exercises_in_template
-:width: 200px
-```
-Additional tip: 
-Set the repository website as your GitHub Pages website under {octicon}`code;1em` `Code`- `About` - {octicon}`gear;1em` - `Website` - `Use your GitHub Pages Website`
+[3. Network Centrality](https://github.com/maastrichtlawtech/legalnetworkanalysis_textbook/blob/main/Chapter_3_Centrality.ipynb)
 
-```{figure} https://github.com/TeachBooks/template_figures/blob/main/use_github_pages_website.png?raw=true
-:name: github_pages_as_website
-```
+[4. Community Detection](https://github.com/maastrichtlawtech/legalnetworkanalysis_textbook/blob/main/Chapter_4_Communities.ipynb)
 
-## Features
-- A github repository structure for making a [Jupyter Book](https://github.com/executablebooks/jupyter-book) (`/book`)
-- An empty TeachBook containing an intro page on root, an example markdown page, an example jupyter notebook page, an example references page. and an example credits page. (`/book/_toc.yml`, `/book/_config.yml`, `/book/credits.md`, `/book/intro.md`, `/book/references.md`, `/book/some_content/overview.md`, `/book/some_content/text_and_code.ipynb`)
-- A file ready for adding references (`references.bib`, `/book/references.md`)
-- An example favicon (web browser icon) (`/book/figures/favicon.ico`, `book/_config.yml`.)
-- An example logo (`/book/figures/TUDelft_logo_rgb.png`, `/book/config.yml`)
-- The configuration files set ready to make your Jupyter Notebooks pages work with [live code using our sphinx-thebe extension](../../features/live_code.ipynb) and our recommended settings (`/book/config.yml`)
-- An example of setting up preprocessing your table of contents to hide certain draft chapters for eg. students (`_toc.yml`)
-- A file containing all the recommended software packages (`requirements.txt`)
-- A file containing the recommended license CC BY 4.0 (`LICENSE.md`)
-- Our [GitHub workflow for publishing your TeachBook to GitHub Pages](https://github.com/TeachBooks/deploy-book-workflow) (`.github/workflow/call-deploy-book.yml`)
-- A gitignore file containing standard python filetype to ignore (`.gitignore`)
-- A readme containing information how to use the template, which can adjusted after using the template (`README.md`)
+[5. Data Collection and Data Preparation](https://github.com/maastrichtlawtech/legalnetworkanalysis_textbook/blob/main/Chapter_5_Data_Collection_and_Preparation.ipynb)
 
-## Contribute
-This tool's repository is stored on [GitHub](https://github.com/TeachBooks/template). The `README.md` of the branch `manual_description` is also part of the TeachBooks manual (this file) as a submodule. If you'd like to contribute, you can create a fork and open a pull request on the [GitHub repository](https://github.com/TeachBooks/template). To update the `README.md` shown in the TeachBooks manual, create a fork and open a merge request for the [GitHub repository of the manual](https://github.com/TeachBooks/manual). If you intent to clone the manual including its submodules, clone using: `git clone --recurse-submodulesgit@github.com:TeachBooks/manual.git`.
+[6. Software](https://github.com/maastrichtlawtech/legalnetworkanalysis_textbook/blob/main/Chapter_6_Software.ipynb)
+
+[Appendix 1 Getting data into NetworkX](https://github.com/maastrichtlawtech/legalnetworkanalysis_textbook/blob/main/Appendix_1_Getting_data_in.ipynb)
+
+[Appendix 2 Text Similarity Networks](https://github.com/maastrichtlawtech/legalnetworkanalysis_textbook/blob/main/Appendix_2_Text_Similarity_Net.ipynb)
+
+[Appendix 3 Normalization](https://github.com/maastrichtlawtech/legalnetworkanalysis_textbook/blob/main/Appendix_3_Normalization.ipynb)
+
+[Appendix 4 Vector Scaling and Normalization](https://github.com/maastrichtlawtech/legalnetworkanalysis_textbook/blob/main/Appendix_4_Vector_Scaling.ipynb)
+
